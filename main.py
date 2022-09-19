@@ -4,7 +4,6 @@ import settings
 import utils
 
 
-
 root = Tk()
 # Override the settings of the window
 root.configure(bg='black')
@@ -41,12 +40,13 @@ center_frame.place(x=utils.width_percentage(25),
 
 for x in range(settings.GRID_SIZE):
     for y in range(settings.GRID_SIZE):
-        c = Cell()
+        c = Cell(x, y)
         c.create_btn_object(center_frame)
         c.cell_btn_object.grid(
             column=x,
             row=y
         )
+Cell.randomize_mines()
 
 
 # Run the window
